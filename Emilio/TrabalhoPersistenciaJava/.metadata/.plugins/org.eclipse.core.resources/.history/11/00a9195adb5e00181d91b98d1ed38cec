@@ -1,0 +1,6 @@
+package br.com.fiap.entidades.escola;
+import org.springframework.jdbc.core.RowMapper; 
+
+public class EscolaMapper implements RowMapper<Escola>{
+
+}

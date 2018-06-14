@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="" key="selection"/>
+		<list key="findhistory">
+			<item value="&#x0D;&#x0A;String opcao = (String) JOptionPane.showInputDialog(null, &quot;Selecione uma operação&quot;, &quot;Eventos&quot;,&#x0D;&#x0A;&#x09;&#x09;JOptionPane.DEFAULT_OPTION, null, new String[] { &quot;SOMA&quot;, &quot;SUBTRAÇÃO&quot;, &quot;MULTIPLICAÇÃO&quot;, &quot;DIVISÃO&quot; },&#x0D;&#x0A;&#x09;&#x09;null); &#x09;&#x0D;&#x0A;"/>
+		</list>
+	</section>
+</section>
