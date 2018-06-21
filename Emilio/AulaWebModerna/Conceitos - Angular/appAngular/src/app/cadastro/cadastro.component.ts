@@ -7,7 +7,6 @@ import { EventosService } from '../services/eventos.service';
     templateUrl: 'views/cadastro.component.html'
 })
 export class CadastroComponent {
-
     //para um evento selecionado
     public eventoSelecionado: IEvento;
     public selecionar(item: IEvento): void {
@@ -15,8 +14,17 @@ export class CadastroComponent {
     }
 
     public listaEventos: IEvento[];
-    constructor(eventosService: EventosService) {
-        this.listaEventos = eventosService.getEventos();
+    constructor(private eventosService: EventosService) {
+        //this.listaEventos = eventosService.getEventos();
+        console.log(1111111111111);
+        this.listar();
+    }
+    
+    public listar(): void {
+        this.eventosService.getEventosWS()
+            .subscribe(res => this.listaEventos = res,
+            error => alert(error),
+            () => console.log('finalizado'));
     }
 
     private novoEvento: IEvento;
@@ -27,8 +35,11 @@ export class CadastroComponent {
     }
 
     public incluir(evento: IEvento) {
-        this.listaEventos.push(evento);
+        //this.listaEventos.push(evento);
+        this.eventosService.setEventoWS(evento)
+            .subscribe(res => JSON.stringify(res),
+            error => alert(error),
+            () => this.listar());
         alert('Evento incluído com sucesso');
     }
-
 }

@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'
 
+import { HttpModule } from '@angular/http'; 
+
 import { appRoutes } from './rotas/app.routes'; //deve vir primeiro
 
 import { AppComponent } from './app.component';
@@ -18,7 +20,7 @@ import { EventosService } from './services/eventos.service';
 
 @NgModule({
   //lista os modulos que a aplicação necessitara
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule, HttpModule],
   //lista os componentes que nossa aplicação utilizará
   declarations: [AppComponent,  MenuComponent,  HomeComponent,  CadastroComponent, NotFoundComponent, SubLista],
   //este é o componente inicial, incluído no index.html
