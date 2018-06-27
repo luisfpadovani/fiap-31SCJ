@@ -1,0 +1,63 @@
+package br.com.fiap.jdbc.dao;
+
+import java.util.List;
+
+import br.com.fiap.entity.Aulo;
+import br.com.fiap.interfaces.IAulo;
+import br.com.fiap.jdbc.mapper.AuloMapper;
+
+import java.util.ArrayList;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class AuloDao implements IAulo {
+
+	private JdbcTemplate jdbcTemplate;
+
+	@Override
+	public int Insert(Aulo item) {
+		try {
+			String sql = "INSERT INTO TB_Aulo (NOME,EMAIL) VALUES (?,?)";
+			jdbcTemplate.update(sql, item.getNome());
+			return 1;
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	@Override
+	public int Update(Curso item) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int Delete(int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Curso> GetAll() {
+		List<Curso> cursos = new ArrayList<>(); 
+		try {
+			String query = "SELECT * FROM TB_CURSO";
+			cursos = this.jdbcTemplate.query(query, new CursoMapper());
+		} catch (Exception e) {
+			throw e;
+		}
+		return cursos;
+	}
+
+	@Override 
+	public Curso GetBy(int id)  {
+		Curso curso = null;
+		try {
+			String query = "SELECT * FROM TB_CURSO WHERE ID= ? ";
+			curso = this.jdbcTemplate.queryForObject(query, new Integer[] { id }, new CursoMapper());
+		} catch (Exception e) {
+			throw e;
+		}
+		return curso;
+	}
+
+}

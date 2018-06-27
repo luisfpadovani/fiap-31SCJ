@@ -1,7 +1,0 @@
-package br.com.fiap.entidade;
-
-public class Aluno {
-	private int id;
-	private String nome;
-	private String matricula;
-}

@@ -1,0 +1,54 @@
+package br.com.fiap.jpa.helper;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import br.com.fiap.entity.CursoAluno;
+import br.com.fiap.interfaces.ICursoAluno;
+
+public class CursoAlunoHelper implements ICursoAluno{
+	private EntityManager em;
+
+	public CursoAlunoHelper(EntityManager em) {
+		this.em = em;
+	}
+
+	@Override
+	public int Insert(Curso item) {
+		try {
+			em.getTransaction().begin();
+			em.persist(item);
+			em.getTransaction().commit();
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
+	}
+
+	@Override
+	public int Update(Curso item) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int Delete(int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Curso> GetAll() {
+		TypedQuery<Curso> query = em.createQuery("Select e from tb_aluno", Curso.class);
+		return query.getResultList();
+	}
+
+	@Override
+	public Curso GetBy(int id) {
+		TypedQuery<Curso> query = em.createQuery("Select e from tb_curso where id = :id", Curso.class);
+		query.setParameter("id", id);
+		return query.getSingleResult();
+	}
+}

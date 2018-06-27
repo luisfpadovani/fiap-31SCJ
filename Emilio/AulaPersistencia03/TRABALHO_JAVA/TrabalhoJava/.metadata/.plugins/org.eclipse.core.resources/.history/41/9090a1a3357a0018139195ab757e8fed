@@ -1,0 +1,5 @@
+package br.fiap.entity;
+
+public class Aluno {
+
+}

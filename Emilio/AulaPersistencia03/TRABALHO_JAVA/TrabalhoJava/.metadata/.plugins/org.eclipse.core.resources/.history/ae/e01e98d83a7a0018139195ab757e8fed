@@ -1,0 +1,48 @@
+package br.com.fiap.entity;
+ 
+import javax.persistence.Column;
+import javax.persistence.Entity; 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id; 
+import javax.persistence.Table; 
+
+@Entity
+@Table(name="tb_curso_aluno") 
+public class CursoAlunoNota {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO) 
+	@Column(name="ID") 
+	private int id;
+
+	@Column(name="id_curso_aluno") 
+	private int id_curso_aluno;
+
+	@Column(name="nota") 
+	private int nota;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getId_curso_aluno() {
+		return id_curso_aluno;
+	}
+
+	public void setId_curso_aluno(int id_curso_aluno) {
+		this.id_curso_aluno = id_curso_aluno;
+	}
+
+	public int getNota() {
+		return nota;
+	}
+
+	public void setNota(int nota) {
+		this.nota = nota;
+	}
+}

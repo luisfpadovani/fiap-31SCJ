@@ -1,0 +1,58 @@
+package br.com.fiap.jdbc.dao;
+
+import java.util.List;
+
+import br.com.fiap.entity.Curso;
+import br.com.fiap.interfaces.ICurso;
+
+import java.util.ArrayList; 
+import org.springframework.jdbc.core.JdbcTemplate;
+import br.com.fiap.entity.Curso; 
+
+
+public class CursoDao implements ICurso {
+
+	private JdbcTemplate jdbcTemplate; 
+	
+	@Override
+	public int Insert(Curso item) {
+		try {
+			 String sql = "INSERT INTO CURSO "
+			 + "(IDESCOLA,DESCRICAO) VALUES (?,?)";
+			 jdbcTemplate.update(
+			 sql,
+			 curso.getEscola().getId(),
+			 curso.getDescricao());
+			 return 1;
+
+			 } catch (Exception e) {
+				 throw e;
+			 } 
+
+	}
+
+	@Override
+	public int Update(Curso item) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int Delete(int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Curso> GetAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Curso GetBy(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

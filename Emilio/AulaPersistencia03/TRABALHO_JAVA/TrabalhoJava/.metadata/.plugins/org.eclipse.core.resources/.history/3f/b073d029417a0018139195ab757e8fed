@@ -1,0 +1,63 @@
+package br.com.fiap.jdbc.dao;
+
+import java.util.List;
+
+import br.com.fiap.entity.CursoAluno;
+import br.com.fiap.interfaces.ICursoAluno;
+import br.com.fiap.jdbc.mapper.CursoAlunoMapper;
+
+import java.util.ArrayList;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+public class CursoAlunoAlunoDao implements ICursoAluno {
+
+	private JdbcTemplate jdbcTemplate;
+
+	@Override
+	public int Insert(CursoAluno item) {
+		try {
+			String sql = "INSERT INTO TB_CursoAluno (NOME) VALUES (?)";
+			jdbcTemplate.update(sql, item.getNome());
+			return 1;
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	@Override
+	public int Update(CursoAluno item) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int Delete(int id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<CursoAluno> GetAll() {
+		List<CursoAluno> cursoalunos = new ArrayList<>(); 
+		try {
+			String query = "SELECT * FROM TB_CursoAluno";
+			cursoalunos = this.jdbcTemplate.query(query, new CursoAlunoMapper());
+		} catch (Exception e) {
+			throw e;
+		}
+		return cursoalunos;
+	}
+
+	@Override 
+	public CursoAluno GetBy(int id)  {
+		CursoAluno cursoaluno = null;
+		try {
+			String query = "SELECT * FROM TB_CursoAluno WHERE ID= ? ";
+			cursoaluno = this.jdbcTemplate.queryForObject(query, new Integer[] { id }, new CursoAlunoMapper());
+		} catch (Exception e) {
+			throw e;
+		}
+		return cursoaluno;
+	}
+
+}

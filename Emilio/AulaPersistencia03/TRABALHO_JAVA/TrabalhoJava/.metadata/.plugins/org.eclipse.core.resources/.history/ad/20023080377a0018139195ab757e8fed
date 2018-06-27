@@ -1,0 +1,8 @@
+package br.com.fiap.entity;
+
+public interface ICrud<T> {
+	int Insert(T item);
+	int Update(T item);
+	int Delete(int id);
+	List<T> GetAll(T item);
+}

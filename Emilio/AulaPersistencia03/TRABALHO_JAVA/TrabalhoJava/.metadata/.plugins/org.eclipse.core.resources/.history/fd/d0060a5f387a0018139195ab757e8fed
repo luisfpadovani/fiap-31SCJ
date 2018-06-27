@@ -1,0 +1,9 @@
+package br.com.fiap.jpa.helper;
+
+public class AlunoHelper implements IAluno {
+	private EntityManager em;
+
+	public EventoHelper(EntityManager em) {
+	 this.em = em;
+	 } 
+}

@@ -1,5 +1,0 @@
-package br.com.fiap.entidades.escola;
-
-public class EscolaMapper implements RowMapper<Escola>{
-
-}
