@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="br.com.fiap.entity.Aluno"/>
+<fullyQualifiedTypeName name="br.com.fiap.interfaces.IAluno"/>
+<fullyQualifiedTypeName name="br.com.fiap.entity.Curso"/>
+<fullyQualifiedTypeName name="br.com.fiap.interfaces.ICurso"/>
+<fullyQualifiedTypeName name="br.com.fiap.jdbc.mapper.CursoMapper"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>
