@@ -16,48 +16,31 @@ import br.com.fiap.jpa.helper.AlunoHelper;
 public class Main {
 
 	public static final String[] tecnologias = { "JDBC", "JPA" };
-	public static String tecnologiaSelecionada;
-	
-	public static final String[] menus = { "CADASTRAR ALUNO", "CADASTRAR CURSO", "CADASTRAR NOTA", "LISTAR ALUNOS", "LISTAR CURSOS", "LISTAR NOTAS" };
-	public static String menuSelecionado;
-	
+	public static String tecnologia;
 	private static boolean encerrarPrograma = false;
 
 	public static void main(String[] args) {
 		while (!encerrarPrograma) {
 			Tecnologia();
 			Menu();
-			RealizarAcao();
-			DesejaNovamente();
 		}
 	}
 	
-	private static void DesejaNovamente(){
-		encerrarPrograma = true;
-	}
 	
-	private static void RealizarAcao() {
-		
-	}
-
+	
 	private static void Menu() {
-		JFrame frame = new JFrame("Menu a selecionar");
-		menuSelecionado = (String) JOptionPane.showInputDialog(frame, "Selecione qual ação deseja usar", "Menu",
-				JOptionPane.QUESTION_MESSAGE, null, menus, menus[0]);
-
-		if (menuSelecionado == null) {
-			menuSelecionado = menus[0];
-		} 
+		encerrarPrograma = true;
 	}
 
 	private static void Tecnologia() {
-		JFrame frame = new JFrame("Tecnologia a se usar");
-		tecnologiaSelecionada = (String) JOptionPane.showInputDialog(frame, "Selecione qual tecnologia deseja usar", "Tecnologia",
-				JOptionPane.QUESTION_MESSAGE, null, tecnologias, tecnologias[0]);
-
-		if (tecnologiaSelecionada == null) {
-			tecnologiaSelecionada = tecnologias[0];
-		}
+		 JFrame frame = new JFrame("Tecnologia a se usar");
+		 tecnologia = (String) JOptionPane.showInputDialog(frame, 
+			        "Selecione qual tecnologia deseja usar",
+			        "Tecnologia",
+			        JOptionPane.QUESTION_MESSAGE, 
+			        null, 
+			        tecnologias, 
+			        tecnologias[0]);
 	}
 
 	private static void Teste() {

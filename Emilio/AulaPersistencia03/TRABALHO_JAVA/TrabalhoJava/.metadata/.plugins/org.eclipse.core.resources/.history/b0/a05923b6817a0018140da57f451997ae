@@ -29,11 +29,12 @@ public class Main {
 			Menu();
 			RealizarAcao();
 			DesejaNovamente();
+			encerrarPrograma = true;
 		}
 	}
 	
 	private static void DesejaNovamente(){
-		encerrarPrograma = true;
+		
 	}
 	
 	private static void RealizarAcao() {

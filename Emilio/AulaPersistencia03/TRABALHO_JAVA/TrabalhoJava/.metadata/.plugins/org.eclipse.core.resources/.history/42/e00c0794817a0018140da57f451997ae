@@ -28,16 +28,7 @@ public class Main {
 			Tecnologia();
 			Menu();
 			RealizarAcao();
-			DesejaNovamente();
 		}
-	}
-	
-	private static void DesejaNovamente(){
-		encerrarPrograma = true;
-	}
-	
-	private static void RealizarAcao() {
-		
 	}
 
 	private static void Menu() {
@@ -47,7 +38,8 @@ public class Main {
 
 		if (menuSelecionado == null) {
 			menuSelecionado = menus[0];
-		} 
+		}
+		encerrarPrograma = true;
 	}
 
 	private static void Tecnologia() {
