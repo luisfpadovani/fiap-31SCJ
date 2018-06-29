@@ -41,13 +41,13 @@ public class CursoAlunoHelper implements ICursoAluno{
 
 	@Override
 	public List<CursoAluno> GetAll() {
-		TypedQuery<CursoAluno> query = em.createQuery("Select e from tb_curso_aluno", CursoAluno.class);
+		TypedQuery<CursoAluno> query = em.createQuery("Select e from CursoAluno e", CursoAluno.class);
 		return query.getResultList();
 	}
 
 	@Override
 	public CursoAluno GetBy(int id) {
-		TypedQuery<CursoAluno> query = em.createQuery("Select e from tb_curso_aluno where id = :id", CursoAluno.class);
+		TypedQuery<CursoAluno> query = em.createQuery("Select e from CursoAluno e where e.id = :id", CursoAluno.class);
 		query.setParameter("id", id);
 		return query.getSingleResult();
 	}

@@ -60,7 +60,7 @@ public class AlunoDao implements IAluno {
 	public Aluno GetBy(int id)  {
 		Aluno aluno = null;
 		try {
-			String query = "SELECT * FROM TB_CURSO WHERE ID= ? ";
+			String query = "SELECT * FROM TB_ALUNO WHERE ID= ? ";
 			aluno = this.jdbcTemplate.queryForObject(query, new Integer[] { id }, new AlunoMapper());
 		} catch (Exception e) {
 			throw e;

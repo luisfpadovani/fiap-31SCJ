@@ -41,13 +41,13 @@ public class AlunoHelper implements IAluno {
 
 	@Override
 	public List<Aluno> GetAll() {
-		TypedQuery<Aluno> query = em.createQuery("Select e from tb_aluno", Aluno.class);
+		TypedQuery<Aluno> query = em.createQuery("Select e from Aluno e", Aluno.class);
 		return query.getResultList();
 	}
 
 	@Override
 	public Aluno GetBy(int id) {
-		TypedQuery<Aluno> query = em.createQuery("Select e from tb_aluno where id = :id", Aluno.class);
+		TypedQuery<Aluno> query = em.createQuery("Select e from Aluno e where  e.id = :id", Aluno.class);
 		query.setParameter("id", id);
 		return query.getSingleResult();
 	}

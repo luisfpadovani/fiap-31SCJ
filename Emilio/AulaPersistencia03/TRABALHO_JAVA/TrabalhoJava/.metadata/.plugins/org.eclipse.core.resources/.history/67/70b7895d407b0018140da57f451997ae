@@ -1,0 +1,128 @@
+package br.com.fiap.app;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import br.com.fiap.entity.Aluno;
+import br.com.fiap.interfaces.IAluno;
+import br.com.fiap.interfaces.ICurso;
+import br.com.fiap.interfaces.ICursoAluno;
+
+import br.com.fiap.jdbc.dao.AlunoDao;
+import br.com.fiap.jpa.helper.AlunoHelper;
+import br.com.fiap.jdbc.dao.CursoDao;
+import br.com.fiap.jpa.helper.CursoHelper;
+import br.com.fiap.jdbc.dao.CursoAlunoDao;
+import br.com.fiap.jpa.helper.CursoAlunoHelper;
+
+public class Main {
+
+	public static EntityManager em = (Persistence.createEntityManagerFactory("jpaPU")).createEntityManager();
+	public static ApplicationContext context = new ClassPathXmlApplicationContext("beanJdbc.xml");
+
+	public static final String[] tecnologias = { "JDBC", "JPA" };
+	public static String tecnologiaSelecionada;
+
+	public static final String[] menus = { "CADASTRAR ALUNO", "CADASTRAR CURSO", "CADASTRAR NOTA", "LISTAR ALUNOS",
+			"LISTAR CURSOS", "LISTAR NOTAS" };
+	public static String menuSelecionado;
+
+	private static boolean encerrarPrograma = false;
+	public static final String[] operacoes = { "SIM", "NÃO" };
+	public static String operacaoSelecionada;
+
+	public static IAluno iAluno;
+	public static ICurso iCurso;
+	public static ICursoAluno iCursoAluno;
+
+	public static void main(String[] args) {
+		while (!encerrarPrograma) {
+			Tecnologia();
+			Menu();
+			RealizarAcao();
+			DesejaNovamente();
+		}
+	}
+
+	private static void RealizarAcao() {  
+		switch (menuSelecionado) {
+			case "CADASTRAR ALUNO": 
+				if(tecnologiaSelecionada=="JDBC") {iAluno = (AlunoDao) context.getBean("AlunoDao");}else {iAluno = new AlunoHelper(em);}
+				CadastrarAluno();
+				break;
+			case "CADASTRAR CURSO": 
+				if(tecnologiaSelecionada=="JDBC") {iCurso = (CursoDao) context.getBean("CursoDao");}else {iCurso = new CursoHelper(em);}
+				CadastrarCurso();
+				break;
+			case "CADASTRAR NOTA": 
+				if(tecnologiaSelecionada=="JDBC") {iCursoAluno = (CursoAlunoDao) context.getBean("CursoAluno");}else {iCursoAluno = new CursoAlunoHelper(em);}
+				CadastrarCursoAluno();
+				break;
+			case "LISTAR ALUNOS": 
+				if(tecnologiaSelecionada=="JDBC") {iCursoAluno = (CursoAlunoDao) context.getBean("CursoAluno");}else {iCursoAluno = new CursoAlunoHelper(em);}
+				ListarCursoAluno();
+				break;
+		}
+	}
+ 
+	private static void DesejaNovamente() {
+		JFrame frame = new JFrame("Fazer outra operação?");
+		operacaoSelecionada = (String) JOptionPane.showInputDialog(frame, "Selecione a opção", "Operação",
+				JOptionPane.QUESTION_MESSAGE, null, operacoes, operacoes[0]);
+
+		if (operacaoSelecionada == "SIM") {
+			encerrarPrograma = true;
+		} else {
+			encerrarPrograma = false;
+		}
+
+	}
+
+	private static void Menu() {
+		JFrame frame = new JFrame("Menu a selecionar");
+		menuSelecionado = (String) JOptionPane.showInputDialog(frame, "Selecione qual ação deseja usar", "Menu",
+				JOptionPane.QUESTION_MESSAGE, null, menus, menus[0]);
+
+		if (menuSelecionado == null) {
+			menuSelecionado = menus[0];
+		}
+	}
+
+	private static void Tecnologia() {
+		JFrame frame = new JFrame("Tecnologia a se usar");
+		tecnologiaSelecionada = (String) JOptionPane.showInputDialog(frame, "Selecione qual tecnologia deseja usar",
+				"Tecnologia", JOptionPane.QUESTION_MESSAGE, null, tecnologias, tecnologias[0]);
+
+		if (tecnologiaSelecionada == null) {
+			tecnologiaSelecionada = tecnologias[0];
+		}
+	}
+
+	
+	private static void ListarCursoAluno() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void CadastrarCursoAluno() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void CadastrarAluno() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void CadastrarCurso() {
+		Aluno aluno = new Aluno();
+		String nome = JOptionPane.showInputDialog(null, "Inisira seu nome", "Cadastro de aluno", JOptionPane.QUESTION_MESSAGE);
+		aluno.setNome(nome);
+		
+	}
+}
