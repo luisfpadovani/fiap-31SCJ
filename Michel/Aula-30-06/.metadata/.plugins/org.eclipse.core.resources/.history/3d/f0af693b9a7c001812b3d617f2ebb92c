@@ -1,0 +1,19 @@
+package br.com.fiap.manipulacaoArquivo;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class ListarArquivos {
+	
+	private String extensao;
+	private Path destino;
+	
+	ListarArquivos(String extensao){
+		this.extensao = extensao;
+	}
+	
+	public void ListarArquivos() {
+		Files.list(destino).filter(x -> x.endsWith(extensao)).forEach(System.out::println));;
+	}
+
+}

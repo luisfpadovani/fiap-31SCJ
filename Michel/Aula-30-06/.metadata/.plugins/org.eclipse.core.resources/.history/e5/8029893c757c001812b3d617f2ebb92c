@@ -1,0 +1,12 @@
+package br.com.fiap.linq;
+
+import java.time.LocalDateTime;
+
+public class Cliente {
+	private String nome;
+	private int idade;
+	private boolean ativo;
+	private LocalDateTime dataPrimeiraCompra;
+	
+	
+}

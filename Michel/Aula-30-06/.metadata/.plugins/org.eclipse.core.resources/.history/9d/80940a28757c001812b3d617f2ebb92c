@@ -1,0 +1,5 @@
+package br.com.fiap.linq;
+
+public class Cliente {
+
+}

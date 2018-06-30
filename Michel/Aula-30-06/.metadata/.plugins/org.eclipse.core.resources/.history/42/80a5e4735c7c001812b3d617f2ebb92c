@@ -1,0 +1,10 @@
+package br.com.fiap.data;
+
+public class PadraoFormat {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,31 @@
+package br.com.fiap.conta;
+
+import java.util.Date;
+
+import br.com.fiap.exepction.SaldoInsuficiente;
+
+public class ContaBancaria {
+
+	protected double saldo;
+	protected String nomeCliente;
+	protected String endCliente;
+	protected String cpfCliente;
+	protected Date dataNascimento;
+	protected Date dataCriacaoconta;
+	
+	public ContaBancaria(String nomeCliente, String endCliente, String cpfCliente, Date dataNascimento, Date dataCriacaoconta) {
+		super();
+		this.nomeCliente = nomeCliente;
+		this.endCliente = endCliente;
+		this.cpfCliente = cpfCliente;
+		this.dataNascimento = dataNascimento;
+		this.dataCriacaoconta = dataCriacaoconta;
+	}
+	public void saque(double valor) throws SaldoInsuficiente{
+		saldo -= valor;
+	}
+	public void deposita(double valor){
+		saldo += valor;
+	}
+
+}

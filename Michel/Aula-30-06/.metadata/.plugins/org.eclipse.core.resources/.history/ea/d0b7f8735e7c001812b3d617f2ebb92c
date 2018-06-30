@@ -1,0 +1,28 @@
+package br.com.fiap.conta;
+
+import java.util.Date;
+
+import br.com.fiap.exepction.SaldoInsuficiente;
+
+public class ContaPoupanca extends ContaBancaria {
+	
+	public ContaPoupanca(String nomeCliente, String endCliente, String cpfCliente,LocalDate dataNascimento,LocalDate dataCriacaoConta) {
+		super(nomeCliente, endCliente, cpfCliente, dataNascimento, dataCriacaoConta);
+	}
+
+	public void saque(double valor) throws SaldoInsuficiente{ 
+		if (saldo - (valor - 0.10) < 0){
+			throw new SaldoInsuficiente("Saldo Insuficiente para o Saque.");
+		}
+		saldo -= valor - 0.10;
+		
+		if(dataCriacaoconta < noew)
+		
+	}
+	
+
+	public boolean equals(Object obj) {
+		ContaPoupanca conta = (ContaPoupanca) obj;
+		return (conta.cpfCliente.equals(this.cpfCliente));
+	}
+}

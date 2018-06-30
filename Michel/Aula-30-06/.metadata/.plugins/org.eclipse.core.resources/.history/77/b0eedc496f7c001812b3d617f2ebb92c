@@ -1,0 +1,29 @@
+package br.com.fiap.colecoes;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	
+	public static void ColecaoArrayList() {
+		ArrayList<String> list = new ArrayList<>();
+		for(int i = 0; i <= 10000;i++) {
+			list.add("Nome" + i);
+		}
+	}
+
+	 
+	public static void ColecaoLinkedList() {
+		LinkedList<String> list = new LinkedList<>();
+		for(int i = 0; i <= 10000;i++) {
+			list.add("Nome" + i);
+		}
+	}
+
+}

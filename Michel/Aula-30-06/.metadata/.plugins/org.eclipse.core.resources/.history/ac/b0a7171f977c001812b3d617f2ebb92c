@@ -1,0 +1,18 @@
+package br.com.fiap.manipulacaoArquivo;
+
+import java.nio.file.Path;
+
+public class Main{
+
+	public static void main(String[] args) {
+		try {
+			Path path = Paths.get("C:\\Windows");
+			System.out.println("Lendo Caminho:	"+path);
+			Files.walkFileTree(path, new
+			ApagarArquivosRecursivamente());
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+	}
+
+}

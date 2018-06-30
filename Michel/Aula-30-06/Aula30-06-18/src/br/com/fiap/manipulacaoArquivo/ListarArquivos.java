@@ -1,0 +1,27 @@
+package br.com.fiap.manipulacaoArquivo;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class ListarArquivos {
+	
+	private String extensao;
+	private Path destino;
+	
+	ListarArquivos(String extensao, Path destino){
+		this.extensao = extensao;
+		this.destino = destino;
+	}
+	
+	public void ListarArquivos() {
+		 try {
+			Files.list(destino).filter(x -> x.toString().endsWith(extensao))
+			.forEach(System.out::println);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

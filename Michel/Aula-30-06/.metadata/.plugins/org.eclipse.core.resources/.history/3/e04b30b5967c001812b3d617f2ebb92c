@@ -1,0 +1,8 @@
+package br.com.fiap.manipulacaoArquivo;
+
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor; 
+
+public class LerArquivoRecursivamente extends SimpleFileVisitor<Path> {
+	
+}

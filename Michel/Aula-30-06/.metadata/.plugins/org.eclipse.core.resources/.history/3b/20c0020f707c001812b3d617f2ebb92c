@@ -1,0 +1,62 @@
+package br.com.fiap.colecoes;
+
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class Main {
+	private static int contatorFinal = 100000;
+	public static void main(String[] args) {
+		 ColecaoArrayListInsercao() ;
+		 ColecaoLinkedListInsercao();
+	}
+	
+	
+	public static void ColecaoArrayListInsercao() {
+		LocalDateTime dataInicio = LocalDateTime.now();		
+		ArrayList<String> list = new ArrayList<>();
+		for(int i = 0; i <= contatorFinal;i++) {
+			list.add("Nome" + i);
+		}
+		LocalDateTime dataFim = LocalDateTime.now();
+		long segundos = ChronoUnit.NANOS.between(dataInicio,dataFim); 
+		System.out.println(segundos + " Segundos Array Inserção");
+	}
+
+	 
+	public static void ColecaoLinkedListInsercao() {
+		LocalDateTime dataInicio = LocalDateTime.now();		
+		LinkedList<String> list = new LinkedList<>();
+		for(int i = 0; i <= contatorFinal;i++) {
+			list.add("Nome" + i);
+		} 
+		LocalDateTime dataFim = LocalDateTime.now();
+		long segundos = ChronoUnit.NANOS.between(dataInicio,dataFim); 
+		System.out.println(segundos + " Segundos Linked Procurar");
+	}
+	
+	public static void ColecaoArrayListProcurar(int posicao) {
+		LocalDateTime dataInicio = LocalDateTime.now();		
+		ArrayList<String> list = new ArrayList<>();
+		for(int i = 0; i <= contatorFinal;i++) {
+			list.add("Nome" + i);
+		}
+		LocalDateTime dataFim = LocalDateTime.now();
+		long segundos = ChronoUnit.NANOS.between(dataInicio,dataFim); 
+		System.out.println(segundos + " Segundos Array Procurar");
+	}
+
+	 
+	public static void ColecaoLinkedListProcurar(int posicao) {
+		LocalDateTime dataInicio = LocalDateTime.now();		
+		LinkedList<String> list = new LinkedList<>();
+		for(int i = 0; i <= contatorFinal;i++) {
+			list.add("Nome" + i);
+		} 
+		LocalDateTime dataFim = LocalDateTime.now();
+		long segundos = ChronoUnit.NANOS.between(dataInicio,dataFim); 
+		System.out.println(segundos + " Segundos Linked Inserção");
+	}
+
+}

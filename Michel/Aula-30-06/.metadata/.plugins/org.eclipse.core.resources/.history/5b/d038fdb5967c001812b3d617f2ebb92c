@@ -1,0 +1,27 @@
+package br.com.fiap.manipulacaoArquivo;
+
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor; 
+
+public class LerArquivoRecursivamente extends SimpleFileVisitor<Path> {
+	@Override
+	public FileVisitResult visitFile(Path file, BasicFileAttributes
+	attrs) throws IOException {
+	System.out.println("Apagando arquivo... ");
+	Files.delete(file);
+	return FileVisitResult.CONTINUE;
+	}
+	@Override
+	public FileVisitResult visitFileFailed(Path file, IOException exc)
+	throws IOException {
+	System.out.println("Falhou ");
+	return FileVisitResult.CONTINUE;
+	}
+	@Override
+	public FileVisitResult postVisitDirectory(Path dir, IOException exc)
+	throws IOException {
+	System.out.println("Apagando diretório... ");
+	Files.delete(dir);
+	return FileVisitResult.CONTINUE;
+	}
+}

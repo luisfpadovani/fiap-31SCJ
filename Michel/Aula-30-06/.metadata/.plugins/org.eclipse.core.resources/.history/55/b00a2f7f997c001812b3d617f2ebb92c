@@ -1,0 +1,9 @@
+package br.com.fiap.manipulacaoArquivo;
+
+public class ListarArquivos {
+	
+	private String extensao;
+	
+	ListarArquivos(String extensao)
+
+}

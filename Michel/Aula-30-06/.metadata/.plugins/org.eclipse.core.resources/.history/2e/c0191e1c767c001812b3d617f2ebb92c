@@ -1,0 +1,28 @@
+package br.com.fiap.linq;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		 
+
+	}
+	
+	private static void PreencherClientes() { 
+		ArrayList<Cliente> listaCliente = new ArrayList<>();
+		Cliente cliente1 =  new Cliente("Cliente 1",30,true, LocalDate.of(1990, Month.JULY, 18));
+		Cliente cliente2 =  new Cliente("Cliente 2",30,true, LocalDate.of(1990, Month.JULY, 18));
+		Cliente cliente3 =  new Cliente("Cliente 3",30,true, LocalDate.of(1990, Month.JULY, 18));
+		Cliente cliente4 =  new Cliente("Cliente 4",30,true, LocalDate.of(1990, Month.JULY, 18));
+		Cliente cliente5 =  new Cliente("Cliente 5",30,true, LocalDate.of(1990, Month.JULY, 18));
+		listaCliente.add(cliente1);
+		listaCliente.add(cliente2);
+		listaCliente.add(cliente3);
+		listaCliente.add(cliente4);
+	}
+
+}

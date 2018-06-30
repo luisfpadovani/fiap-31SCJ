@@ -1,0 +1,22 @@
+package br.com.fiap.conta;
+
+import java.time.LocalDate;
+
+import br.com.fiap.exepction.SaldoInsuficiente;
+
+public class App { 
+		public static void main(String[] args) {
+
+			LocalDate datacriacaoConta = LocalDate.of(2018, 5, 30);
+			LocalDate dataNascimento = LocalDate.of(1990, 6, 18);
+			
+			ContaPoupanca conta1 = new ContaPoupanca("José da Silva", "Rua A, 123", "1234567", dataNascimento ,datacriacaoConta);
+			conta1.deposita(100);
+			try {
+				conta1.saque(120);
+			} catch (SaldoInsuficiente e) {
+				System.out.println(e.getMessage());
+			}
+
+		}  
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+<fullyQualifiedTypeName name="java.time.Month"/>
+<fullyQualifiedTypeName name="br.com.fiap.exepction.SaldoInsuficiente"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.time.temporal.ChronoUnit"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="br.com.fiap.Paralelismo.Cavalo"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.nio.file.FileVisitor"/>
+<fullyQualifiedTypeName name="java.nio.file.SimpleFileVisitor"/>
+<fullyQualifiedTypeName name="java.nio.file.attribute.BasicFileAttributes"/>
+<fullyQualifiedTypeName name="java.nio.file.FileVisitResult"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.nio.file.Paths"/>
+<fullyQualifiedTypeName name="java.nio.file.FileSystems"/>
+<fullyQualifiedTypeName name="java.nio.file.PathMatcher"/>
+<fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
+<fullyQualifiedTypeName name="java.nio.file.DirectoryStream"/>
+<fullyQualifiedTypeName name="java.nio.file.StandardCopyOption"/>
+<fullyQualifiedTypeName name="java.nio.file.Path"/>
+<fullyQualifiedTypeName name="java.nio.file.Files"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+</qualifiedTypeNameHistroy>

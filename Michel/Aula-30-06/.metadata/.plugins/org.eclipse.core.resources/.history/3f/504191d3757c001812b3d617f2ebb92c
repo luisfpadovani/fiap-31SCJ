@@ -1,0 +1,21 @@
+package br.com.fiap.linq;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Cliente cliente3 = new Cliente("Matias",30,true, LocalDate.of(1990, Month.JULY, 18));
+		Cliente cliente1 = new Cliente("João");
+		Cliente cliente2 = new Cliente("Maria");
+		Cliente cliente4 = new Cliente("Marcelo");
+		listaCliente.add(cliente1);
+		listaCliente.add(cliente2);
+		listaCliente.add(cliente3);
+		listaCliente.add(cliente4);
+
+	}
+
+}

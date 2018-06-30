@@ -1,0 +1,14 @@
+package br.com.fiap.Paralelismo;
+
+public class Main {
+
+	public static void main(String[] args) {
+		 new Cavalo("Cavalo 2").run();
+		 new Cavalo("Cavalo 2").run();
+		 new Cavalo("Cavalo 3").run();
+		 new Cavalo("Cavalo 4").run();
+		 new Cavalo("Cavalo 5").run();
+
+	}
+
+}

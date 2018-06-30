@@ -1,0 +1,23 @@
+package br.com.fiap.Paralelismo;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		 Thread th1 = new Thread(new Cavalo("Cavalo 1"));
+		 th1.start();
+
+		 Thread th1 = new Thread(new Cavalo("Cavalo 1"));
+		 th1.start();
+
+		 Thread th1 = new Thread(new Cavalo("Cavalo 1"));
+		 th1.start();
+
+		 Thread th1 = new Thread(new Cavalo("Cavalo 1"));
+		 th1.start();
+		 
+		 
+
+	}
+
+}

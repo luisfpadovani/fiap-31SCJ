@@ -1,0 +1,55 @@
+package br.com.fiap.manipulacaoArquivo;
+
+import java.io.IOException;
+import java.nio.file.DirectoryStream;
+import java.nio.file.FileSystems;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.PathMatcher;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+
+public class LerArquivoRecursivamente extends SimpleFileVisitor<Path> {
+	private PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:*.txt");
+
+	@Override
+	public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+		if (matcher.matches(file.getFileName())) {
+			System.out.println(file.getFileName());
+			copiarArquivos(file, @"C:\\Temp");
+		}
+		return FileVisitResult.CONTINUE;
+	}
+
+	@Override
+	public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+		System.out.println("Falhou ");
+		return FileVisitResult.CONTINUE;
+	}
+
+	@Override
+	public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+		System.out.println("Lendo diretório... " + dir.getFileName());
+		return FileVisitResult.CONTINUE;
+	}
+
+	public void copiarArquivos(Path origem, Path destino) throws IOException {
+		// se é um diretório, tentamos criar. se já existir, não tem problema.
+		if (Files.isDirectory(origem)) {
+			Files.createDirectories(destino);
+			// listamos todas as entradas do diretório
+			DirectoryStream<Path> entradas = Files.newDirectoryStream(origem);
+			for (Path entrada : entradas) {
+				// para cada entrada, achamos o arquivo equivalente
+				Path novaOrigem = origem.resolve(entrada.getFileName());
+				Path novoDestino = destino.resolve(entrada.getFileName());
+				// invoca o metodo de maneira recursiva
+				copiarArquivos(novaOrigem, novoDestino);
+			}
+		} else {
+			// copiamos o arquivo
+			Files.copy(origem, destino);
+		}
+	}
+}

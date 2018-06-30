@@ -1,0 +1,34 @@
+package br.com.fiap.colecoes;
+
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	
+	public static void ColecaoArrayList() {
+		LocalDateTime dataInicio = LocalDateTime.now();		
+		ArrayList<String> list = new ArrayList<>();
+		for(int i = 0; i <= 10000;i++) {
+			list.add("Nome" + i);
+		}
+		LocalDateTime dataFim = LocalDateTime.now();
+		long meses = ChronoUnit.SECONDS.between(dataFim,dataInicio); 
+	}
+
+	 
+	public static void ColecaoLinkedList() {
+		LinkedList<String> list = new LinkedList<>();
+		for(int i = 0; i <= 10000;i++) {
+			list.add("Nome" + i);
+		}
+	}
+
+}

@@ -1,0 +1,32 @@
+package br.com.fiap.data;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+
+public class PadraoFormat {
+
+	public static void main(String[] args) {
+		FormatDate();
+		 CrouUnit();
+	}
+
+	public void FormatDate() {
+		LocalDateTime agora = LocalDateTime.now();
+		agora.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		String resultado = agora.format(formatador);
+		System.out.printf("Data atual: %s ", resultado);
+	}
+	
+	public void CrouUnit() {
+		LocalDate agora = LocalDate.now();
+		LocalDate outraData = LocalDate.of(2000, Month.AUGUST, 23);
+		long dias = ChronoUnit.DAYS.between(outraData, agora);
+		long meses = ChronoUnit.MONTHS.between(outraData, agora);
+		long anos = ChronoUnit.YEARS.between(outraData, agora);
+		System.out.printf("%s dias, %s meses e %s anos", dias, meses, anos);
+	} 
+}
