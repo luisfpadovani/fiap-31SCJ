@@ -1,0 +1,16 @@
+package br.com.fiap;
+
+public class Exercicio5 {
+
+	public static void main(String[] args) { 
+		  String t = "AaBbCcDdEeFfGgHhIiJj";
+		  
+	}
+	
+	public static String Cripto(String mensagem) {
+		for(int j =0; j < m.length()-1 ;j++){
+			System.out.println("Valor "+(int)m.charAt(j));
+		  } 
+	}
+
+}

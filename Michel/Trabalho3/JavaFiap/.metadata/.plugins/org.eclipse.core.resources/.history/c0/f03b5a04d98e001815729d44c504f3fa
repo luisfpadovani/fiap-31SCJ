@@ -1,0 +1,8 @@
+package br.com.fiap;
+
+public class Pessoa {
+	private String nome;
+	private int idade;
+	private char sexo;
+	private String empresa;
+}

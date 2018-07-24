@@ -1,0 +1,32 @@
+package br.com.fiap;
+
+public class Exercicio5 {
+
+	public static void main(String[] args) { 
+		  String t = "AaBbCcDdEeFfGgHhIiJj";
+		  StringBuilder a = Cripto(t);
+		  System.out.println(a);
+		  System.out.println(Descripto(a.toString()));
+		  
+	}
+	
+	public static StringBuilder Cripto(String mensagem) {		 
+		 StringBuilder cripto = new StringBuilder();		 
+		 for(int j =0; j <mensagem.length()-1 ;j++){ 
+			char m = (char)((int)mensagem.charAt(j) + 1);
+			cripto.append();
+		  } 		
+		  return cripto; 
+	}
+	
+	public static StringBuilder Descripto(String mensagem) {		 
+		 StringBuilder descripto = new StringBuilder();		 
+		 for(int j =0; j <mensagem.length()-1 ;j++){  
+			 char a = (char)();
+			 
+			 descripto.append(a);
+		  } 		
+		  return descripto; 
+	}
+
+}

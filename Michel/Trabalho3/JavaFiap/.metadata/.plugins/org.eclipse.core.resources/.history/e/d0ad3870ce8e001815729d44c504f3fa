@@ -1,0 +1,41 @@
+package br.com.fiap;
+
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class Exercicio3 {
+
+	private static int contatorFinal = 10000;
+	ArrayList<String> list = new ArrayList<>();
+	
+	public static void main(String[] args) {
+		 ColecaoArrayListInsercao() ;
+		 ColecaoLinkedListInsercao();
+	}
+	
+	//ARRAY LIST
+	public static void ColecaoArrayListInsercao() {
+		LocalDateTime dataInicio = LocalDateTime.now();	
+		for(int i = 0; i <= contatorFinal;i++) {
+			list.add("Nome" + i);
+		}
+		LocalDateTime dataFim = LocalDateTime.now();
+		long segundos = ChronoUnit.NANOS.between(dataInicio,dataFim); 
+		System.out.println(segundos + " Segundos Array Inserção");
+	}
+
+	//LINKED LIST
+	public static void ColecaoLinkedListInsercao() {
+		LocalDateTime dataInicio = LocalDateTime.now();		
+		LinkedList<String> list = new LinkedList<>();
+		for(int i = 0; i <= contatorFinal;i++) {
+			list.add("Nome" + i);
+		}  
+		LocalDateTime dataFim = LocalDateTime.now(); 
+		long segundos = ChronoUnit.NANOS.between(dataInicio,dataFim); 
+		System.out.println(segundos + " Segundos Linked Procurar");
+	}
+
+}

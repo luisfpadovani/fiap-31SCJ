@@ -1,0 +1,12 @@
+package br.com.fiap;
+ 
+
+public class Exercicio4 { 
+	private static ArrayList<Pessoa> Arraylist = new ArrayList<>(); 
+	
+	public static void main(String[] args) {
+		  
+	}
+	
+ 
+}
